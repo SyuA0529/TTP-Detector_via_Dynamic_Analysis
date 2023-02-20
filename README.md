@@ -10,7 +10,7 @@
 
 MITRE ATT&CK에서는 포괄적인 최신 공격들을 전술, 테크닉, 프로시저로 분류하여 [Matrix](https://attack.mitre.org/versions/v12/matrices/mobile/android/)형태로 표현하고, 최신 공격들에 대한 탐지 및 공격 완화 기법 등의 정보를 제공한다.
 
-[Quark](https://github.com/quark-engine/quark-engine)는 정적분석을 통해 테크닉 및 프로시저를 탐지하는 모듈이다.
+[Quark](https://github.com/quark-engine/quark-engine)는 정적분석을 통해 테크닉 및 프로시저를 탐지하는 도구이다.
 이들은 [Androguard](https://androguard.readthedocs.io/en/latest/#)를 활용한 정적 분석을 통해 애플리케이션에서 호출한 API들을 분석하여 
 규칙에 해당하는 API 호출 시퀀스가 존재하는지 판단한다.
 
