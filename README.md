@@ -47,7 +47,7 @@ Quark는 짧은 실행시간 내에 많은 애플리케이션들을 분석할 �
 4에서 확인한 내용을 토대로 어떤 프로시저들이 탐지되었는지를 출력한다.
 
 # How to use
-### 준비사항: frida-server가 실행된 기기/에뮬레이터, Androguard
+### 준비사항: frida-server가 실행된 기기/에뮬레이터, frida와 Androguard가 설치된 PC
 ### 1. droidbot-master 디렉토리에 들어가 다음의 명령어를 실행한다.
 ```
 pip install -e .
