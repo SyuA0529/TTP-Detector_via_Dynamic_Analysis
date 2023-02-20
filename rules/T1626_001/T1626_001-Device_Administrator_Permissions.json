@@ -1,0 +1,31 @@
+{
+    "Technique": "T1626: Device Administrator Permissions",
+    "permission": ["android.permission.BIND_DEVICE_ADMIN"],
+    "api": [
+        {
+            "class": "Landroid/content/Intent;",
+            "method": "<init>",
+            "descriptor": "(Ljava/lang/String;)V",
+            "parameter": ["android.app.action.ADD_DEVICE_ADMIN"],
+            "next_check_type" : "instance_instance"
+        },
+
+        {
+            "class": "Landroid/content/Intent;",
+            "method": "putExtra",
+            "descriptor": "(Ljava/lang/String; Landroid/os/Parcelable;)Landroid/content/Intent;",
+            "parameter": ["android.app.extra.DEVICE_ADMIN"],
+            "next_check_type" : "instance_parameter"
+        },
+        
+        {
+            "class": "Landroid/app/Activity;",
+            "method": "startActivityForResult",
+            "descriptor": "(Landroid/content/Intent; I Landroid/os/Bundle;)V",
+            "parameter": ["__instance__"],
+            "next_check_type" : "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

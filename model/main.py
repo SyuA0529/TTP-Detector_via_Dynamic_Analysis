@@ -1,12 +1,12 @@
-import signal
 import subprocess
 import time
 from file import *
 from static_analysis import *
 from dynamic_analysis import *
-import json
 
-def analysis(filepath, rule_dir, out_dir) :
+
+
+def analysis(filepath, rule_dir, out_dir, frida_script_path) :
     # load APK files
     apk_lst=[]
     file_lst=[]
@@ -51,15 +51,17 @@ def analysis(filepath, rule_dir, out_dir) :
         
         # apk is same -> app is not uninstalled
         with open(os.devnull, 'w') as tempf:
-            cmd = "droidbot -a " + os.path.abspath(apk_lst[n]) + " -o " + os.path.abspath(out_dir_s) + "\\dynamic"
+            cmd = "droidbot -a " + os.path.abspath(apk_lst[n]) + " -o " + os.path.abspath(out_dir_s) + "\\dynamic" + " -frida " + frida_script_path
             process = subprocess.Popen(cmd, shell = False, stdin = tempf, stdout = tempf, stderr = tempf)
+
             try :
                 process.wait(timeout=30)
             except subprocess.TimeoutExpired:
                 subprocess.call(['taskkill', '/F', '/T', '/PID',  str(process.pid)], stdin = tempf, stdout = tempf, stderr = tempf)
-                #os.kill(process.pid, signal.CTRL_C_EVENT)
+                
             except :
-                print("wtf")
+                print("Something wrong")
+                exit(1)
                 
             # uninstall app
             subprocess.call(["adb", "uninstall", "io.github.ylimit.droidbotapp"], stdin = tempf, stdout = tempf, stderr = tempf)
@@ -79,7 +81,10 @@ def analysis(filepath, rule_dir, out_dir) :
         
 
 def main() :
-    analysis("./apks", "./rules", "./results")
+    apk_filepath = input("Input APK file path: ")
+    rule_filepath = input("Input Rule file path: ")
+    frida_script_path = input("Input Frida script path: ")
+    analysis(apk_filepath, rule_filepath, "./results", frida_script_path)
     
 if __name__ == "__main__" :
     main()

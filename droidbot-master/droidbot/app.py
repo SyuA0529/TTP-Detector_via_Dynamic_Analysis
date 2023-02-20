@@ -9,7 +9,7 @@ class App(object):
     this class describes an app
     """
 
-    def __init__(self, app_path, output_dir=None):
+    def __init__(self, app_path, frida, output_dir=None):
         """
         create an App instance
         :param app_path: local file path of app
@@ -17,7 +17,7 @@ class App(object):
         """
         assert app_path is not None
         self.logger = logging.getLogger(self.__class__.__name__)
-
+        self.frida = frida
         self.app_path = app_path
 
         self.output_dir = output_dir

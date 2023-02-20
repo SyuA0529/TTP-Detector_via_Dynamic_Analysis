@@ -258,9 +258,10 @@ class EventLog(object):
             
     def hook_application_start(self, app_package) :
         self.device.logger.info("========== hook start application ==========")
+        self.device.logger.info(self.app.frida)
         hook_file = open(self.device.output_dir + "\\api-list.txt", "a")
         hook_app = ["frida", "-U", "-f", app_package,
-                         "-l", "D:\\code\\final_project\\hook-script\\hook_script.js", 
+                         "-l", self.app.frida, 
                          "--no-pause"]
         subprocess.Popen(hook_app, stdout=hook_file, stderr=subprocess.PIPE)
         self.device.logger.info("========== Start application ==========")

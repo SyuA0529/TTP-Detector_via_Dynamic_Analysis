@@ -1,0 +1,23 @@
+{
+    "Technique": "T1623.001: Unix Shell-1",
+    "permission": [],
+    "api": [
+        {
+            "class": "Ljava/lang/Runtime;",
+            "method": "getRuntime",
+            "descriptor": "()Ljava/lang/Runtime;",
+            "parameter": [],
+            "next_check_type": "return_instance"
+        },
+
+        {
+            "class": "Ljava/lang/Runtime;",
+            "method": "exec",
+            "descriptor": "(DontCare)Ljava/lang/Process;",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

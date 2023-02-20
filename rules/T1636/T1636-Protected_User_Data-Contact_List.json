@@ -1,0 +1,23 @@
+{
+    "Technique": "T1636: Protected User Data: Contact List ",
+    "permission": ["android.permission.READ_CONTACTS"],
+    "api": [
+        {
+            "class": "Landroid/content/ContextWrapper;",
+            "method": "getContentResolver",
+            "descriptor": "()Landroid/content/ContentResolver;",
+            "parameter": [],
+            "next_check_type": "return_instance"
+        },
+
+        {
+            "class": "Landroid/content/ContentResolver;",
+            "method": "query",
+            "descriptor": "(Landroid/net/Uri; [Ljava/lang/String; Landroid/os/Bundle; Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+            "parameter": ["content://com.android.contacts/data/phones"],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

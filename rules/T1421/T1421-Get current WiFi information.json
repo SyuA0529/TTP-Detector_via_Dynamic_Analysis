@@ -1,0 +1,23 @@
+{
+    "Technique": "T1421: Get current Wifi IP address",
+    "permission": [],
+    "api": [
+        {
+            "class": "Landroid/app/Activity;",
+            "method": "getSystemService",
+            "descriptor": "(Ljava/lang/String)Ljava/lang/Object;",
+            "parameter": ["wifi"],
+            "next_check_type": "return_instance"
+        },
+
+        {
+            "class": "Landroid/net/wifi/WifiManager;",
+            "method": "getConnectionInfo",
+            "descriptor": "()Landroid/net/wifi/WifiInfo;",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": "API level < 31"
+}

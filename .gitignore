@@ -258,32 +258,4 @@ results/T1636/dynamic/temp/screen_2023-02-12_211907.jpg
 results/T1636/dynamic/temp/screen_2023-02-12_211909.jpg
 results/T1636/dynamic/views/view_a7a8960f79213461b4a278afb82c8575.jpg
 results/T1636/dynamic/views/view_d79dcc1a54f7ecec529b5770fce5c6dd.jpg
-rules/T1420/T1420-Check_File_Exist.json
-rules/T1420/T1420-Check_File_is_Directory.json
-rules/T1420/T1420-External_Storage_Discovery-1.1.json
-rules/T1420/T1420-External_Storage_Discovery-1.2.json
-rules/T1420/T1420-External_Storage_Discovery-2.1.json
-rules/T1420/T1420-External_Storage_Discovery-2.2.json
-rules/T1420/T1420-External_Storage_Discovery-3.1.json
-rules/T1420/T1420-External_Storage_Discovery-3.2.json
-rules/T1420/T1420-External_Storage_Discovery-4.1.json
-rules/T1420/T1420-External_Storage_Discovery-4.2.json
-rules/T1421/T1421-Check_GPS_Enable-1.json
-rules/T1421/T1421-Check_GPS_Enable-2.json
-rules/T1421/T1421-Get current WiFi information.json
-rules/T1422/T1422-Get IMEI number.json
-rules/T1422/T1422-Get IMSI number.json
-rules/T1424/T1424-Process_Discovery-1.1.json
-rules/T1424/T1424-Process_Discovery-1.2.json
-rules/T1424/T1424-Process_Discovery-2.json
-rules/T1424/T1424-Process_Discovery-3.json
-rules/T1424/T1424-Process_Discovery-4.json
-rules/T1430/T1430-Get_last_known_location.json
-rules/T1430/T1430-Get_location_latitude.json
-rules/T1430/T1430-Get_location_longtitude.json
-rules/T1430/T1430-Get_location_string.json
-rules/T1430/T1430-Get_location_time.json
-rules/T1623_001/T1623_001-Unix_Shell-1.json
-rules/T1623_001/T1623_001-Unix_Shell-2.json
-rules/T1626_001/T1626_001-Device_Administrator_Permissions.json
-rules/T1636/T1636-Protected_User_Data-Contact_List.json
+results/api-list.txt

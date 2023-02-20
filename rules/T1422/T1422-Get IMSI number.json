@@ -1,0 +1,23 @@
+{
+    "Technique": "T1422: Get IMSI number",
+    "permission": ["android.permission.READ_PHONE_STATE"],
+    "api": [
+        {
+            "class": "Landroid/app/Activity;",
+            "method": "getSystemService",
+            "descriptor": "(Ljava/lang/String)Ljava/lang/Object;",
+            "parameter": ["phone"],
+            "next_check_type": "return_instance"
+        },
+
+        {
+            "class": "Landroid/telephony/TelephonyManager;",
+            "method": "getSubscriberId",
+            "descriptor": "()Ljava/lang/String;",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

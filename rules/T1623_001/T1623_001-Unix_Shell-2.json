@@ -1,0 +1,23 @@
+{
+    "Technique": "T1623.001: Unix Shell-2",
+    "permission": [],
+    "api": [
+        {
+            "class": "Ljava/lang/ProcessBuilder;",
+            "method": "<init>",
+            "descriptor": "(DontCare)V",
+            "parameter": [],
+            "next_check_type": "instance_instance"
+        },
+
+        {
+            "class": "Ljava/lang/ProcessBuilder;",
+            "method": "start",
+            "descriptor": "()Ljava/lang/Process;",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

@@ -1,0 +1,23 @@
+{
+    "Technique": "T1430: Get last known location",
+    "permission": ["android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"],
+    "api": [
+        {
+            "class": "Landroid/location/Location;",
+            "method": "<init>",
+            "descriptor": "(Ljava/lang/String;)V",
+            "parameter": ["None"],
+            "next_check_type": "instance_instance"
+        },
+
+        {
+            "class": "Landroid/location/Location;",
+            "method": "getLatitude",
+            "descriptor": "()J",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

@@ -45,7 +45,8 @@ def parse_args():
                                  input_policy.POLICY_NAIVE_BFS,
                                  input_policy.POLICY_GREEDY_BFS,
                              ))
-
+    parser.add_argument("-frida", action="store", dest="frida", required=True,
+                        help="Use Frida Script")
     # for distributed DroidBot
     parser.add_argument("-distributed", action="store", dest="distributed", choices=["master", "worker"],
                         help="Start DroidBot in distributed mode.")
@@ -139,7 +140,8 @@ def main():
             qemu_no_graphic=opts.qemu_no_graphic,
             humanoid=opts.humanoid,
             ignore_ad=opts.ignore_ad,
-            replay_output=opts.replay_output)
+            replay_output=opts.replay_output,
+            frida=opts.frida)
         droidmaster.start()
     else:
         droidbot = DroidBot(
@@ -165,7 +167,8 @@ def main():
             master=opts.master,
             humanoid=opts.humanoid,
             ignore_ad=opts.ignore_ad,
-            replay_output=opts.replay_output)
+            replay_output=opts.replay_output,
+            frida=opts.frida)
         droidbot.start()
     return
 

@@ -1,0 +1,24 @@
+{
+    "Technique": "T1420: Discover External Storage-3.1",
+    "permission": ["android.permission.MANAGE_EXTERNAL_STORAGE"],
+    "instance_check" : true,
+    "api": [
+        {
+            "class": "Ljava/io/File;",
+            "method": "<init>",
+            "descriptor": "(Ljava/lang/String;)V",
+            "parameter": ["/storage/emulated/0 | /sdcard"],
+            "next_check_type": "instance_instance"
+        },
+
+        {
+            "class": "Ljava/io/File;",
+            "method": "listFiles",
+            "descriptor": "()[Ljava/io/File;",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": "Higher than SDK version 28"
+}

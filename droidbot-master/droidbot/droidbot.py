@@ -44,7 +44,8 @@ class DroidBot(object):
                  master=None,
                  humanoid=None,
                  ignore_ad=False,
-                 replay_output=None):
+                 replay_output=None,
+                 frida=None):
         """
         initiate droidbot with configurations
         :return:
@@ -80,6 +81,8 @@ class DroidBot(object):
         self.humanoid = humanoid
         self.ignore_ad = ignore_ad
         self.replay_output = replay_output
+        
+        self.frida = frida
 
         self.enabled = True
 
@@ -93,7 +96,7 @@ class DroidBot(object):
                 enable_accessibility_hard=self.enable_accessibility_hard,
                 humanoid=self.humanoid,
                 ignore_ad=ignore_ad)
-            self.app = App(app_path, output_dir=self.output_dir)
+            self.app = App(app_path, frida, output_dir=self.output_dir)
 
             self.env_manager = AppEnvManager(
                 device=self.device,

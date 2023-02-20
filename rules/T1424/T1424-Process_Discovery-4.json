@@ -1,0 +1,31 @@
+{
+    "Technique": "T1424: Process Discovery-4",
+    "permission": ["android.permission.PACKAGE_USAGE_STATS"],
+    "api": [
+        {
+            "class": "Landroid/app/Activity;",
+            "method": "getSystemService",
+            "descriptor": "(Ljava/lang/String;)Ljava/lang/Object;",
+            "parameter": ["usagestats"],
+            "next_check_type": "None"
+        },
+
+        {
+            "class": "Landroid/app/usage/UsageStatsManager;",
+            "method": "queryEvents",
+            "descriptor": "(J J)Landroid/app/usage/UsageEvents;",
+            "parameter": [],
+            "next_check_type": "None"
+        },
+        
+        {
+            "class": "Landroid/app/usage/UsageEvents$Event;",
+            "method": "<init>",
+            "descriptor": "()V",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

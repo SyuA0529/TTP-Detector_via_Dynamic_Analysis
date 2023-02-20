@@ -64,7 +64,8 @@ class DroidMaster(object):
                  qemu_no_graphic=False,
                  humanoid=None,
                  ignore_ad=False,
-                 replay_output=None):
+                 replay_output=None,
+                 frida=None):
         """
         initiate droidmaster, and
         initiate droidbot's with configurations
@@ -99,6 +100,7 @@ class DroidMaster(object):
         self.humanoid = humanoid
         self.ignore_ad = ignore_ad
         self.replay_output = replay_output
+        self.frida = frida
 
         # 2. Initiate Device Pool
         self.domain = "localhost"
@@ -111,7 +113,7 @@ class DroidMaster(object):
         self.device_pool = {}
         self.device_unique_id = 0
 
-        self.app = App(app_path, output_dir=self.output_dir)
+        self.app = App(app_path, frida, output_dir=self.output_dir)
         self.qemu_app_hda = "%s_%s" % (self.qemu_hda, self.app.get_package_name())
 
         for i in range(self.device_pool_capacity):

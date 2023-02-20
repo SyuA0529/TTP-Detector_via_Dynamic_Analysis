@@ -1,0 +1,23 @@
+{
+    "Technique": "T1424: Process Discovery-1",
+    "permission": [],
+    "api": [
+        {
+            "class": "Ljava/io/File;",
+            "method": "<init>",
+            "descriptor": "(Ljava/lang/String;)V",
+            "parameter": ["/proc"],
+            "next_check_type": "instance_instance"
+        },
+
+        {
+            "class": "Ljava/io/File;",
+            "method": "listFiles",
+            "descriptor": "()[Ljava/io/File;",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

@@ -1,0 +1,23 @@
+{
+    "Technique": "T1421: Check GPS Enable 1",
+    "permission": ["android.permission.ACCESS_COARSE_LOCATION | android.permission.ACCESS_FINE_LOCATION"],
+    "api": [
+        {
+            "class": "Landroid/app/Activity;",
+            "method": "getSystemService",
+            "descriptor": "(Ljava/lang/String)Ljava/lang/Object;",
+            "parameter": ["location"],
+            "next_check_type": "return_instance"
+        },
+
+        {
+            "class": "Landroid/location/LocationManager;",
+            "method": "isProviderEnabled",
+            "descriptor": "(Ljava/lang/String)Z",
+            "parameter": ["gps"],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}

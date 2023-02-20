@@ -1,0 +1,23 @@
+{
+    "Technique": "T1420: Check File is Directory",
+    "permission": [],
+    "api": [
+        {
+            "class": "Ljava/io/File;",
+            "method": "<init>",
+            "descriptor": "(Ljava/lang/String;)V",
+            "parameter": [],
+            "next_check_type": "instance_instance"
+        },
+
+        {
+            "class": "Ljava/io/File;",
+            "method": "isDirectory",
+            "descriptor": "()Z",
+            "parameter": [],
+            "next_check_type": "None"
+        }
+    ],
+    "score": 1,
+    "Label": ""
+}
